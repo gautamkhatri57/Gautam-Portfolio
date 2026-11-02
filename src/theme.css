@@ -274,3 +274,49 @@ footer {
 @media (max-width: 768px) {
   .section h2 { font-size: 36px; }
 }
+
+
+/* =========================================================
+   RESPONSIVE FIX â€” hero was stretched to full phone height
+   and vertically centered, leaving a big empty gap on mobile.
+========================================================= */
+
+/* Laptop / desktop: full screen, but never taller than 860px */
+.hero {
+  min-height: min(100svh, 860px);
+}
+
+/* Tablet & phone: height follows the content, starts near the top */
+@media (max-width: 900px) {
+  .hero {
+    min-height: auto;
+    align-items: flex-start;
+    padding-top: 130px;
+    padding-bottom: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 112px;
+    padding-bottom: 64px;
+  }
+
+  .hero h1 {
+    font-size: clamp(40px, 12.5vw, 56px);
+    letter-spacing: -1.8px;
+  }
+
+  .hero h2 { font-size: 20px; }
+  .hero-text { font-size: 16px; line-height: 1.7; }
+  .hero-buttons { gap: 10px; }
+
+  .nav-links a { font-size: 11px; }
+
+  .contact { min-height: auto; }
+}
+
+@media (max-width: 480px) {
+  .hero { padding-top: 100px; }
+  .section { padding-top: 80px; padding-bottom: 64px; }
+}
